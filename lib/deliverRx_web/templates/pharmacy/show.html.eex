@@ -1,0 +1,33 @@
+<h1>Show Pharmacy</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @pharmacy.name %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @pharmacy.address %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @pharmacy.city %>
+  </li>
+
+  <li>
+    <strong>State:</strong>
+    <%= @pharmacy.state %>
+  </li>
+
+  <li>
+    <strong>Zip:</strong>
+    <%= @pharmacy.zip %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.pharmacy_path(@conn, :edit, @pharmacy) %></span>
+<span><%= link "Back", to: Routes.pharmacy_path(@conn, :index) %></span>

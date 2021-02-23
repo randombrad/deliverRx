@@ -1,0 +1,33 @@
+<h1>Show Courier</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @courier.name %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @courier.address %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @courier.city %>
+  </li>
+
+  <li>
+    <strong>Zip:</strong>
+    <%= @courier.zip %>
+  </li>
+
+  <li>
+    <strong>Serviced ids:</strong>
+    <%= @courier.serviced_ids %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.courier_path(@conn, :edit, @courier) %></span>
+<span><%= link "Back", to: Routes.courier_path(@conn, :index) %></span>

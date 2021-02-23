@@ -1,5 +1,8 @@
 defmodule DeliverRxWeb.Router do
   use DeliverRxWeb, :router
+  use Pow.Phoenix.Router
+  use Pow.Extension.Phoenix.Router,
+    extensions: [PowResetPassword]
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -9,14 +12,32 @@ defmodule DeliverRxWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :protected do
+    plug Pow.Plug.RequireAuthenticated,
+      error_handler: Pow.Phoenix.PlugErrorHandler
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  scope "/" do
+    pipe_through :browser
+
+    pow_routes()
+    pow_extension_routes()
   end
 
   scope "/", DeliverRxWeb do
     pipe_through :browser
 
     get "/", PageController, :index
+  end
+
+  scope "/", DeliverRxWeb do
+    pipe_through [:browser, :protected]
+    resources "/couriers", CourierController
+    resources "/pharmacies", PharmacyController
   end
 
   # Other scopes may use custom stacks.

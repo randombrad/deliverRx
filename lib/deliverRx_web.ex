@@ -71,6 +71,14 @@ defmodule DeliverRxWeb do
     end
   end
 
+  def mailer_view do
+      quote do
+        use Phoenix.View, root: "lib/deliverRx_web/templates",
+                          namespace: DeliverRxWeb
+        use Phoenix.HTML
+    end
+  end
+
   @doc """
   When used, dispatch to the appropriate controller/view/etc.
   """
