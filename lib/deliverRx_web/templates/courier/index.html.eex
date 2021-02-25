@@ -6,8 +6,8 @@
       <th>Name</th>
       <th>Address</th>
       <th>City</th>
+      <th>State</th>
       <th>Zip</th>
-      <th>Serviced ids</th>
 
       <th></th>
     </tr>
@@ -18,8 +18,8 @@
       <td><%= courier.name %></td>
       <td><%= courier.address %></td>
       <td><%= courier.city %></td>
+      <td><%= courier.state %></td>
       <td><%= courier.zip %></td>
-      <td><%= courier.serviced_ids %></td>
 
       <td>
         <span><%= link "Show", to: Routes.courier_path(@conn, :show, courier) %></span>

@@ -18,13 +18,13 @@
   </li>
 
   <li>
-    <strong>Zip:</strong>
-    <%= @courier.zip %>
+    <strong>State:</strong>
+    <%= @courier.state %>
   </li>
 
   <li>
-    <strong>Serviced ids:</strong>
-    <%= @courier.serviced_ids %>
+    <strong>Zip:</strong>
+    <%= @courier.zip %>
   </li>
 
 </ul>

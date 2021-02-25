@@ -5,6 +5,7 @@ defmodule DeliverRx.Repo.Migrations.CreateUsers do
     create table(:users) do
       add :email, :string, null: false
       add :password_hash, :string
+      add :user_id, :integer 
 
       timestamps()
     end

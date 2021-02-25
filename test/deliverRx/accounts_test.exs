@@ -136,4 +136,136 @@ defmodule DeliverRx.AccountsTest do
       assert %Ecto.Changeset{} = Accounts.change_courier(courier)
     end
   end
+
+  describe "couriers" do
+    alias DeliverRx.Accounts.Courier
+
+    @valid_attrs %{address: "some address", city: "some city", name: "some name", zip: "some zip"}
+    @update_attrs %{address: "some updated address", city: "some updated city", name: "some updated name", zip: "some updated zip"}
+    @invalid_attrs %{address: nil, city: nil, name: nil, zip: nil}
+
+    def courier_fixture(attrs \\ %{}) do
+      {:ok, courier} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Accounts.create_courier()
+
+      courier
+    end
+
+    test "list_couriers/0 returns all couriers" do
+      courier = courier_fixture()
+      assert Accounts.list_couriers() == [courier]
+    end
+
+    test "get_courier!/1 returns the courier with given id" do
+      courier = courier_fixture()
+      assert Accounts.get_courier!(courier.id) == courier
+    end
+
+    test "create_courier/1 with valid data creates a courier" do
+      assert {:ok, %Courier{} = courier} = Accounts.create_courier(@valid_attrs)
+      assert courier.address == "some address"
+      assert courier.city == "some city"
+      assert courier.name == "some name"
+      assert courier.zip == "some zip"
+    end
+
+    test "create_courier/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Accounts.create_courier(@invalid_attrs)
+    end
+
+    test "update_courier/2 with valid data updates the courier" do
+      courier = courier_fixture()
+      assert {:ok, %Courier{} = courier} = Accounts.update_courier(courier, @update_attrs)
+      assert courier.address == "some updated address"
+      assert courier.city == "some updated city"
+      assert courier.name == "some updated name"
+      assert courier.zip == "some updated zip"
+    end
+
+    test "update_courier/2 with invalid data returns error changeset" do
+      courier = courier_fixture()
+      assert {:error, %Ecto.Changeset{}} = Accounts.update_courier(courier, @invalid_attrs)
+      assert courier == Accounts.get_courier!(courier.id)
+    end
+
+    test "delete_courier/1 deletes the courier" do
+      courier = courier_fixture()
+      assert {:ok, %Courier{}} = Accounts.delete_courier(courier)
+      assert_raise Ecto.NoResultsError, fn -> Accounts.get_courier!(courier.id) end
+    end
+
+    test "change_courier/1 returns a courier changeset" do
+      courier = courier_fixture()
+      assert %Ecto.Changeset{} = Accounts.change_courier(courier)
+    end
+  end
+
+  describe "couriers" do
+    alias DeliverRx.Accounts.Courier
+
+    @valid_attrs %{address: "some address", city: "some city", name: "some name", state: "some state", zip: "some zip"}
+    @update_attrs %{address: "some updated address", city: "some updated city", name: "some updated name", state: "some updated state", zip: "some updated zip"}
+    @invalid_attrs %{address: nil, city: nil, name: nil, state: nil, zip: nil}
+
+    def courier_fixture(attrs \\ %{}) do
+      {:ok, courier} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Accounts.create_courier()
+
+      courier
+    end
+
+    test "list_couriers/0 returns all couriers" do
+      courier = courier_fixture()
+      assert Accounts.list_couriers() == [courier]
+    end
+
+    test "get_courier!/1 returns the courier with given id" do
+      courier = courier_fixture()
+      assert Accounts.get_courier!(courier.id) == courier
+    end
+
+    test "create_courier/1 with valid data creates a courier" do
+      assert {:ok, %Courier{} = courier} = Accounts.create_courier(@valid_attrs)
+      assert courier.address == "some address"
+      assert courier.city == "some city"
+      assert courier.name == "some name"
+      assert courier.state == "some state"
+      assert courier.zip == "some zip"
+    end
+
+    test "create_courier/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Accounts.create_courier(@invalid_attrs)
+    end
+
+    test "update_courier/2 with valid data updates the courier" do
+      courier = courier_fixture()
+      assert {:ok, %Courier{} = courier} = Accounts.update_courier(courier, @update_attrs)
+      assert courier.address == "some updated address"
+      assert courier.city == "some updated city"
+      assert courier.name == "some updated name"
+      assert courier.state == "some updated state"
+      assert courier.zip == "some updated zip"
+    end
+
+    test "update_courier/2 with invalid data returns error changeset" do
+      courier = courier_fixture()
+      assert {:error, %Ecto.Changeset{}} = Accounts.update_courier(courier, @invalid_attrs)
+      assert courier == Accounts.get_courier!(courier.id)
+    end
+
+    test "delete_courier/1 deletes the courier" do
+      courier = courier_fixture()
+      assert {:ok, %Courier{}} = Accounts.delete_courier(courier)
+      assert_raise Ecto.NoResultsError, fn -> Accounts.get_courier!(courier.id) end
+    end
+
+    test "change_courier/1 returns a courier changeset" do
+      courier = courier_fixture()
+      assert %Ecto.Changeset{} = Accounts.change_courier(courier)
+    end
+  end
 end

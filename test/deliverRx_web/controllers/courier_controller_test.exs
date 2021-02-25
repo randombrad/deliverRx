@@ -3,9 +3,9 @@ defmodule DeliverRxWeb.CourierControllerTest do
 
   alias DeliverRx.Accounts
 
-  @create_attrs %{address: "some address", city: "some city", name: "some name", serviced_ids: 42, zip: "some zip"}
-  @update_attrs %{address: "some updated address", city: "some updated city", name: "some updated name", serviced_ids: 43, zip: "some updated zip"}
-  @invalid_attrs %{address: nil, city: nil, name: nil, serviced_ids: nil, zip: nil}
+  @create_attrs %{address: "some address", city: "some city", name: "some name", state: "some state", zip: "some zip"}
+  @update_attrs %{address: "some updated address", city: "some updated city", name: "some updated name", state: "some updated state", zip: "some updated zip"}
+  @invalid_attrs %{address: nil, city: nil, name: nil, state: nil, zip: nil}
 
   def fixture(:courier) do
     {:ok, courier} = Accounts.create_courier(@create_attrs)

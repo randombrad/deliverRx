@@ -6,8 +6,9 @@ defmodule DeliverRx.Accounts.Courier do
     field :address, :string
     field :city, :string
     field :name, :string
-    field :serviced_ids, :integer
+    field :state, :string
     field :zip, :string
+    field :user_id, :id
 
     timestamps()
   end
@@ -15,7 +16,7 @@ defmodule DeliverRx.Accounts.Courier do
   @doc false
   def changeset(courier, attrs) do
     courier
-    |> cast(attrs, [:name, :address, :city, :zip, :serviced_ids])
-    |> validate_required([:name, :address, :city, :zip, :serviced_ids])
+    |> cast(attrs, [:name, :address, :city, :state, :zip])
+    |> validate_required([:name, :address, :city, :state, :zip])
   end
 end

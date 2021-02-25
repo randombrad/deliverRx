@@ -1,0 +1,28 @@
+<h1>Show Order</h1>
+
+<ul>
+
+  <li>
+    <strong>Is delivered:</strong>
+    <%= @order.is_delivered %>
+  </li>
+
+  <li>
+    <strong>Pick up:</strong>
+    <%= @order.pick_up %>
+  </li>
+
+  <li>
+    <strong>Pharmacy:</strong>
+    <%= @order.pharmacy_id %>
+  </li>
+
+  <li>
+    <strong>Customer Id:</strong>
+    <%= @order.customer_id %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.order_path(@conn, :edit, @order) %></span>
+<span><%= link "Back", to: Routes.order_path(@conn, :index) %></span>

@@ -36,8 +36,11 @@ defmodule DeliverRxWeb.Router do
 
   scope "/", DeliverRxWeb do
     pipe_through [:browser, :protected]
+    resources "/users", CourierController
     resources "/couriers", CourierController
     resources "/pharmacies", PharmacyController
+    resources "/customers", CustomerController
+    resources "/orders", OrderController
   end
 
   # Other scopes may use custom stacks.
