@@ -1,0 +1,20 @@
+
+<%= if @current_user do %>
+
+  <a class="dropdown-item" href="#" tabindex="-1" aria-disabled="true"><%= @current_user.email %></a>
+
+<a>
+  <%= link "Settings", to: Routes.pow_registration_path(@conn, :edit), class: "dropdown-item" %>
+</a>
+<a>
+  <%= link "Log out",to: Routes.pow_registration_path(@conn, :delete), method: :delete, class: "dropdown-item" %>
+</a>
+<% else %>
+<a>
+  <%= link "Register", to: Routes.pow_registration_path(@conn, :new), class: "dropdown-item"  %>
+</a>
+<a>
+  <%= link "Sign in", to: Routes.pow_session_path(@conn, :new), class: "dropdown-item" %>
+</a>
+
+<% end %>

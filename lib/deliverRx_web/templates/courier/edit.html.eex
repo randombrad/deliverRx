@@ -1,5 +1,7 @@
-<h1>Edit Courier</h1>
 
+<h2>Edit Couriers</h2>
+<div class="mb-3">
 <%= render "form.html", Map.put(assigns, :action, Routes.courier_path(@conn, :update, @courier)) %>
 
-<span><%= link "Back", to: Routes.courier_path(@conn, :index) %></span>
+<span><%= link "Back", to: Routes.courier_path(@conn, :index) ,class: "btn btn-primary"%></span>
+</div>

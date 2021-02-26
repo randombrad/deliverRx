@@ -1,7 +1,7 @@
-<h1>Show Courier</h1>
 
-<ul>
-
+<h2>Show Couriers</h2>
+<div class="mb-3">
+<ul class="unstyled">
   <li>
     <strong>Name:</strong>
     <%= @courier.name %>
@@ -28,6 +28,7 @@
   </li>
 
 </ul>
-
-<span><%= link "Edit", to: Routes.courier_path(@conn, :edit, @courier) %></span>
-<span><%= link "Back", to: Routes.courier_path(@conn, :index) %></span>
+<br/>
+<span><%= link "Edit", to: Routes.courier_path(@conn, :edit, @courier) ,class: "btn btn-primary"%></span>
+<span><%= link "Back", to: Routes.courier_path(@conn, :index) ,class: "btn btn-primary"%></span>
+</div>

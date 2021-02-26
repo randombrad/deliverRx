@@ -92,7 +92,3 @@ user_data = [
 Enum.each(customer_data, fn(data) ->
     Customers.create_customer(data)
 end)
-
-add :email, :string, null: false
-add :password_hash, :string
-add :user_id, :integer

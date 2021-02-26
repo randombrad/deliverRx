@@ -16,7 +16,7 @@ defmodule DeliverRx.Accounts.Pharmacy do
   @doc false
   def changeset(pharmacy, attrs) do
     pharmacy
-    |> cast(attrs, [:name, :address, :city, :state, :zip])
+    |> cast(attrs, [:name, :address, :city, :state, :zip,:user_id])
     |> validate_required([:name, :address, :city, :state, :zip])
   end
 end

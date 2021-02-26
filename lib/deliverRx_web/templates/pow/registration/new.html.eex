@@ -1,5 +1,5 @@
-<h1>Create Account</h1>
-
+<h2>Create Account</h2>
+<div class="mb-3">
 <%= form_for @changeset, @action, [as: :user], fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
@@ -8,21 +8,23 @@
   <% end %>
 
   <%= label f, Pow.Ecto.Schema.user_id_field(@changeset) %>
-  <%= text_input f, Pow.Ecto.Schema.user_id_field(@changeset) %>
+  <%= text_input f, Pow.Ecto.Schema.user_id_field(@changeset),class: "form-control" %>
   <%= error_tag f, Pow.Ecto.Schema.user_id_field(@changeset) %>
 
-  <%= label f, :password %>
-  <%= password_input f, :password %>
+  <%= label f, :password ,class: "form-check-label"%>
+  <%= password_input f, :password , class: "form-control"%>
   <%= error_tag f, :password %>
 
-  <%= label f, :password_confirmation %>
-  <%= password_input f, :password_confirmation %>
+  <%= label f, :password_confirmation ,class: "form-check-label"%>
+  <%= password_input f, :password_confirmation ,class: "form-control" %>
   <%= error_tag f, :password_confirmation %>
-
+<br/>
   <div>
-    <%= submit "Register" %>
+    <%= submit "Register",class: "btn btn-primary" %>
   </div>
+  <br/>
 <% end %>
 
 
-<span><%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %></span>
+<span><%= link "Sign in", to: Routes.pow_session_path(@conn, :new) ,class: "btn btn-primary"%></span>
+</div>

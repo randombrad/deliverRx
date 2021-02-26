@@ -6,23 +6,25 @@
   <% end %>
 
   <%= label f, :is_delivered %>
-  <%= checkbox f, :is_delivered %>
+  <%= checkbox f, :is_delivered ,class: "form-checkbox"%>
   <%= error_tag f, :is_delivered %>
-
+<br/>
   <%= label f, :pick_up %>
   <%= datetime_select f, :pick_up, year: [options: 2020..2100] %>
   <%= error_tag f, :pick_up %>
-
+<br/>
   <%= label f, :pharmacy_id %>
-  <%= number_input f, :pharmacy_id %>
+  <%= text_input f, :pharmacy_id ,class: "form-control"%>
   <%= error_tag f, :pharmacy_id %>
 
   <%= label f, :customer_id %>
-  <%= number_input f, :customer_id%>
+  <%= text_input f, :customer_id ,class: "form-control"%>
   <%= error_tag f, :customer_id %>
 
-
+<br/>
   <div>
-    <%= submit "Save" %>
+    <%= submit "Save" ,class: "btn btn-primary" %>
+    <br/>
   </div>
+</br>
 <% end %>

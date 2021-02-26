@@ -1,0 +1,6 @@
+
+
+  <a class="dropdown-item" href="/couriers" tabindex="-1" aria-disabled="true">Couriers</a>
+  <a class="dropdown-item" href="/pharmacies" tabindex="-1" aria-disabled="true">Pharmacies</a>
+  <a class="dropdown-item" href="/customers" tabindex="-1" aria-disabled="true">Customers</a>
+  <a class="dropdown-item" href="/orders" tabindex="-1" aria-disabled="true">Orders</a>

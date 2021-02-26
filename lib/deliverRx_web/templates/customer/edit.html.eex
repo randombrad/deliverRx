@@ -1,5 +1,6 @@
-<h1>Edit Customer</h1>
-
+<h2>Edit Customer</h2>
+<div class="mb-3">
 <%= render "form.html", Map.put(assigns, :action, Routes.customer_path(@conn, :update, @customer)) %>
 
-<span><%= link "Back", to: Routes.customer_path(@conn, :index) %></span>
+<span><%= link "Back", to: Routes.customer_path(@conn, :index) ,class: "btn btn-primary"%></span>
+</div>

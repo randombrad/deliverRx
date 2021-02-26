@@ -6,7 +6,7 @@ defmodule DeliverRx.Users.User do
 
   schema "users" do
     pow_user_fields()
-
+    
     timestamps()
   end
 

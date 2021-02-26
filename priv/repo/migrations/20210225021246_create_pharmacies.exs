@@ -14,5 +14,6 @@ defmodule DeliverRx.Repo.Migrations.CreatePharmacies do
     end
 
     create index(:pharmacies, [:user_id])
+    create index(:pharmacies, [:user_id])
   end
 end

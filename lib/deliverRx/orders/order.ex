@@ -15,7 +15,7 @@ defmodule DeliverRx.Orders.Order do
   @doc false
   def changeset(order, attrs) do
     order
-    |> cast(attrs, [:is_delivered, :pick_up])
+    |> cast(attrs, [:is_delivered, :pick_up, :pharmacy_id, :customer_id])
     |> validate_required([:is_delivered, :pick_up])
   end
 end

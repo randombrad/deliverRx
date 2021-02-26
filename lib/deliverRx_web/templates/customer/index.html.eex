@@ -1,6 +1,6 @@
-<h1>Listing Customers</h1>
-
-<table>
+<h2>Listing Customers</h2>
+<div class="mb-3">
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -22,13 +22,14 @@
       <td><%= customer.zip %></td>
 
       <td>
-        <span><%= link "Show", to: Routes.customer_path(@conn, :show, customer) %></span>
-        <span><%= link "Edit", to: Routes.customer_path(@conn, :edit, customer) %></span>
-        <span><%= link "Delete", to: Routes.customer_path(@conn, :delete, customer), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        <span><%= link "Show", to: Routes.customer_path(@conn, :show, customer) ,class: "btn btn-primary"%></span>
+        <span><%= link "Edit", to: Routes.customer_path(@conn, :edit, customer) ,class: "btn btn-primary"%></span>
+        <span><%= link "Delete", to: Routes.customer_path(@conn, :delete, customer), method: :delete, data: [confirm: "Are you sure?"] ,class: "btn btn-primary"%></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Customer", to: Routes.customer_path(@conn, :new) %></span>
+<span><%= link "New Customer", to: Routes.customer_path(@conn, :new) ,class: "btn btn-primary"%></span>
+<br/>

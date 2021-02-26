@@ -6,26 +6,27 @@
   <% end %>
 
   <%= label f, :name %>
-  <%= text_input f, :name %>
+  <%= text_input f, :name ,class: "form-control"%>
   <%= error_tag f, :name %>
 
   <%= label f, :address %>
-  <%= text_input f, :address %>
+  <%= text_input f, :address ,class: "form-control"%>
   <%= error_tag f, :address %>
 
   <%= label f, :city %>
-  <%= text_input f, :city %>
+  <%= text_input f, :city ,class: "form-control"%>
   <%= error_tag f, :city %>
 
   <%= label f, :state %>
-  <%= text_input f, :state %>
+  <%= text_input f, :state ,class: "form-control"%>
   <%= error_tag f, :state %>
 
   <%= label f, :zip %>
-  <%= text_input f, :zip %>
+  <%= text_input f, :zip ,class: "form-control"%>
   <%= error_tag f, :zip %>
-
+<br/>
   <div>
-    <%= submit "Save" %>
+    <%= submit "Save" ,class: "btn btn-primary" %>
   </div>
+  <br/>
 <% end %>
